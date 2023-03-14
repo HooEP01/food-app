@@ -12,32 +12,32 @@ class CategoriesScreen extends StatelessWidget {
       Category(
         id: 'c1',
         title: 'Italian',
-        color: Colors.purple,
+        color: Colors.red,
       ),
       Category(
         id: 'c2',
         title: 'Quick & Easy',
-        color: Colors.purple,
+        color: Colors.orange,
       ),
       Category(
         id: 'c3',
         title: 'Humburgers',
-        color: Colors.purple,
+        color: Colors.yellow,
       ),
       Category(
         id: 'c4',
         title: 'Italian',
-        color: Colors.purple,
+        color: Colors.green,
       ),
       Category(
         id: 'c5',
         title: 'Quick & Easy',
-        color: Colors.purple,
+        color: Colors.blue,
       ),
       Category(
         id: 'c6',
         title: 'Humburgers',
-        color: Colors.purple,
+        color: Colors.indigo,
       ),
       Category(
         id: 'c7',
@@ -76,6 +76,7 @@ class CategoriesScreen extends StatelessWidget {
         title: const Text('DeliMeal'),
       ),
       body: GridView(
+        padding: const EdgeInsets.all(8),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
@@ -85,6 +86,7 @@ class CategoriesScreen extends StatelessWidget {
         children: DUMMY_CATEGORIES
             .map(
               (e) => CategoryItem(
+                e.id,
                 e.title,
                 e.color,
               ),
