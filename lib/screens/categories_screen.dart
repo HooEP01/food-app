@@ -26,47 +26,37 @@ class CategoriesScreen extends StatelessWidget {
       ),
       Category(
         id: 'c4',
-        title: 'Italian',
+        title: 'German',
         color: Colors.green,
       ),
       Category(
         id: 'c5',
-        title: 'Quick & Easy',
+        title: 'Light & Lovely',
         color: Colors.blue,
       ),
       Category(
         id: 'c6',
-        title: 'Humburgers',
+        title: 'Exotic',
         color: Colors.indigo,
       ),
       Category(
         id: 'c7',
-        title: 'Italian',
+        title: 'Breakfast',
         color: Colors.purple,
       ),
       Category(
         id: 'c8',
-        title: 'Quick & Easy',
+        title: 'Asian',
         color: Colors.purple,
       ),
       Category(
         id: 'c9',
-        title: 'Humburgers',
+        title: 'Franch',
         color: Colors.purple,
       ),
       Category(
         id: 'c10',
-        title: 'Italian',
-        color: Colors.purple,
-      ),
-      Category(
-        id: 'c11',
-        title: 'Quick & Easy',
-        color: Colors.purple,
-      ),
-      Category(
-        id: 'c12',
-        title: 'Humburgers',
+        title: 'Summer',
         color: Colors.purple,
       ),
     ];
