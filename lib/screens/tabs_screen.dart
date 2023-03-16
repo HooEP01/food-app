@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'categories_screen.dart';
 import 'favorites_screen.dart';
 
+import '../widgets/main_drawer.dart';
+
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
-
+  static String routeName = '/#';
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
@@ -29,6 +31,9 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'] as String),
+      ),
+      drawer: const Drawer(
+        child: MainDrawer(),
       ),
       body: _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(

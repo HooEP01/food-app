@@ -3,6 +3,7 @@ import '/screens/category_meals_screen.dart';
 import '/screens/categories_screen.dart';
 import '/screens/meal_detail_screen.dart';
 import '/screens/tabs_screen.dart';
+import '/screens/filters_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,21 +42,22 @@ class MyApp extends StatelessWidget {
       home: const TabsScreen(),
       // initialRoute: '/',
       routes: {
-        // '#': (context) => const CategoriesScreen(),
+        TabsScreen.routeName: (context) => const CategoriesScreen(),
         CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
         MealDetailScreen.routeName: (context) => const MealDetailScreen(),
+        FiltersScreen.routeName: (context) => const FiltersScreen(),
       },
-      onGenerateRoute: (settings) {
-        print(settings.arguments);
-        // if (settings.name == '/meal-detail') {
-        //   return ...
-        // } else if (settings.name == '/something-else') {
-        //   return ...
-        // }
-        return MaterialPageRoute(
-          builder: (context) => const CategoriesScreen(),
-        );
-      },
+      // onGenerateRoute: (settings) {
+      //   print(settings.arguments);
+      //   if (settings.name == '/meal-detail') {
+      //     return ...
+      //   } else if (settings.name == '/something-else') {
+      //     return ...
+      //   }
+      //   return MaterialPageRoute(
+      //     builder: (context) => const CategoriesScreen(),
+      //   );
+      // },
       onUnknownRoute: ((settings) {
         return MaterialPageRoute(
           builder: (context) => const CategoriesScreen(),
