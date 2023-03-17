@@ -7,7 +7,7 @@ import '../widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
-  static String routeName = '/#';
+  static String routeName = '/home';
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
