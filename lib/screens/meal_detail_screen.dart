@@ -29,7 +29,9 @@ class MealDetailScreen extends StatelessWidget {
     );
   }
 
-  const MealDetailScreen({super.key});
+  final Function _toggleFavorite;
+  final Function isFavorite;
+  const MealDetailScreen(this._toggleFavorite, this.isFavorite, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class MealDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$selectedMeal.title'),
+        title: Text(selectedMeal.title),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -70,26 +72,28 @@ class MealDetailScreen extends StatelessWidget {
               itemBuilder: (context, index) => Column(children: [
                 ListTile(
                   leading: CircleAvatar(
-                    child: Text('# ${(index + 1)}'),
                     backgroundColor: Theme.of(context).colorScheme.primary,
+                    child: Text('# ${(index + 1)}'),
                   ),
                   title: Text(
                     selectedMeal.steps[index],
                   ),
                 ),
-                Divider(),
+                const Divider(),
               ]),
             ))
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(
-            Icons.delete,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop(mealId);
-          }),
+        onPressed: () => _toggleFavorite(mealId),
+        child: Icon(
+          isFavorite(mealId) ? Icons.star : Icons.star_border,
+        ),
+      ),
+      // onPressed: () {
+      //   Navigator.of(context).pop(mealId);
+      // }),
     );
   }
 }
